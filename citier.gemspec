@@ -30,7 +30,6 @@ Gem::Specification.new do |s|
     "lib/citier/root_instance_methods.rb",
     "lib/citier/sql_adapters.rb",
     "lib/citier/relation_methods.rb",
-    "Manifest",
     "citier.gemspec"]
   s.homepage = %q{https://github.com/peterhamilton/citier/}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "citier", "--main", "README"]
