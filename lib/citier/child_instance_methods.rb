@@ -47,8 +47,8 @@ module Citier
           parent.transaction do
             parent_saved = parent.save
             self.id = parent.id
-            self.created_at ||= parent.created_at  # should set the generated timestamps to view object
-            self.updated_at ||= parent.updated_at
+            self.created_at ||= parent.created_at if self.respond_to? :created_at
+            self.updated_at ||= parent.updated_at if self.respond_to? :updated_at
 
             if !parent_saved
               # Couldn't save parent class
