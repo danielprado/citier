@@ -77,8 +77,9 @@ module ActiveRecord
     end
 
     alias_method :relation_apply_finder_options, :apply_finder_options
-    def apply_finder_options(options)
-      return relation_apply_finder_options(options) if !@klass.acts_as_citier?
+    def apply_finder_options(options,silence_deprecation = false)
+      return relation_apply_finder_options(options,silence_deprecation) if !@klass.acts_as_citier?
+      ActiveSupport::Deprecation.warn("#apply_finder_options is deprecated") unless silence_deprecation
 
       relation = self
 
